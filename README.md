@@ -28,5 +28,7 @@ From CloudWatch console:
 - install "awscli" and "jq" in your local term.
 - Run substituting your log-group-name and -log-stream-name:
 
- $aws logs --profile free-tier-lab --region us-west-2 get-log-events --log-group-name  /aws/codebuild/Demo-Maven \
- --log-stream-name 77cdbae0-e5ae-43c9-a652-c8d6a5839404 | jq '.events[].message' -r | grep -v '^$' 
+ $aws logs --profile free-tier-lab --region us-west-2 get-log-events \
+ --log-group-name  /aws/codebuild/Demo-Maven \
+ --log-stream-name 77cdbae0-e5ae-43c9-a652-c8d6a5839404 \
+ | jq '.events[].message' -r | grep -v '^$' 
